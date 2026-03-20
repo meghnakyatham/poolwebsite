@@ -2382,6 +2382,562 @@
         .text-center {
             text-align: center;
         }
+
+        /* ══════════════════════════════════════
+           TABLET  (≤ 1024px)
+        ══════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 28px;
+            }
+
+            /* Nav */
+            .nav-links {
+                gap: 0;
+            }
+
+            .nav-links a {
+                font-size: 0.82rem;
+                padding: 6px 9px;
+            }
+
+            /* Hero */
+            .hero-content {
+                padding: 110px 28px 70px;
+                max-width: 100%;
+            }
+
+            /* Services */
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Why Us */
+            .why-grid {
+                gap: 48px;
+            }
+
+            /* Pool Types */
+            .pool-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Calculator */
+            .calc-wrap {
+                grid-template-columns: 1fr;
+                max-width: 540px;
+            }
+
+            .calc-right {
+                padding: 36px 40px;
+            }
+
+            /* Process */
+            .process-grid {
+                gap: 48px;
+            }
+
+            /* Pricing */
+            .pricing-cards {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            /* Gallery */
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 200px 200px 200px;
+            }
+
+            .gallery-cell:nth-child(1) {
+                grid-column: span 2;
+            }
+
+            .gallery-cell:nth-child(5) {
+                grid-column: span 1;
+            }
+
+            /* Reviews */
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Areas */
+            .areas-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Blog */
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Portal */
+            .portal-sidebar {
+                width: 150px;
+            }
+
+            .portal-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Contact */
+            .contact-left {
+                padding: 56px 40px;
+            }
+
+            .contact-right {
+                padding: 56px 40px;
+            }
+
+            /* Footer */
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 36px;
+            }
+        }
+
+        /* ══════════════════════════════════════
+           MOBILE  (≤ 768px)
+        ══════════════════════════════════════ */
+        @media (max-width: 768px) {
+            section {
+                padding: 72px 0;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            /* ── NAV ── */
+            nav {
+                padding: 0 20px;
+                height: 56px;
+                gap: 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .btn-ghost-nav {
+                display: none;
+            }
+
+            .btn-primary-nav {
+                font-size: 0.82rem;
+                padding: 7px 16px;
+            }
+
+            .nav-logo {
+                font-size: 1rem;
+            }
+
+            .nav-logo-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            /* ── HERO ── */
+            .hero-content {
+                padding: 100px 20px 60px;
+                text-align: center;
+            }
+
+            .hero-headline {
+                font-size: clamp(2.2rem, 8vw, 3rem);
+            }
+
+            .hero-sub {
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-btns button,
+            .hero-btns .btn-primary,
+            .hero-btns .btn-outline-white {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 0;
+                justify-content: center;
+            }
+
+            .hero-stat {
+                padding: 16px 20px;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+                margin: 0;
+                width: 50%;
+                text-align: center;
+            }
+
+            .hero-stat:nth-child(odd) {
+                border-right: 1px solid rgba(255, 255, 255, 0.12);
+            }
+
+            .hero-stat:last-child,
+            .hero-stat:nth-last-child(2):nth-child(odd) {
+                border-bottom: none;
+            }
+
+            /* ── SECTION HEADERS ── */
+            .section-title {
+                font-size: clamp(1.7rem, 5vw, 2.2rem);
+            }
+
+            .section-sub {
+                font-size: 0.92rem;
+                margin-bottom: 40px;
+            }
+
+            /* ── SERVICES ── */
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .service-card {
+                min-height: 280px;
+            }
+
+            /* On mobile show description always (no hover needed) */
+            .service-card p {
+                max-height: 80px;
+                opacity: 1;
+                margin-top: 10px;
+            }
+
+            .service-link {
+                max-height: 40px;
+                opacity: 1;
+                margin-top: 12px;
+            }
+
+            /* ── WHY US ── */
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .why-right {
+                display: none;
+            }
+
+            .why-left .section-eyebrow,
+            .why-left .section-title {
+                text-align: center;
+            }
+
+            .why-divider {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .why-cta {
+                display: block;
+                text-align: center;
+            }
+
+            /* ── POOL TYPES ── */
+            .pool-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pool-card {
+                min-height: 420px;
+            }
+
+            /* Always show benefits on mobile */
+            .pool-benefits {
+                max-height: 200px;
+                opacity: 1;
+            }
+
+            .pool-filter {
+                gap: 6px;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            /* ── CALCULATOR ── */
+            .calc-wrap {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                border-radius: 16px;
+            }
+
+            .calc-left {
+                padding: 32px 24px;
+            }
+
+            .calc-right {
+                padding: 32px 24px;
+            }
+
+            .calc-price {
+                font-size: 2.2rem;
+            }
+
+            /* ── PROCESS ── */
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .process-img-wrap {
+                display: none;
+            }
+
+            .process-section-title {
+                text-align: center;
+            }
+
+            .process-section-sub {
+                text-align: center;
+            }
+
+            /* ── PRICING ── */
+            .pricing-cards {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .financing-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .financing-banner-left h4 {
+                justify-content: center;
+            }
+
+            /* ── GALLERY ── */
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 180px);
+            }
+
+            .gallery-cell:nth-child(1) {
+                grid-column: span 2;
+            }
+
+            .gallery-cell:nth-child(5) {
+                grid-column: span 2;
+            }
+
+            /* Always show captions on mobile */
+            .gallery-caption {
+                opacity: 1;
+            }
+
+            /* ── REVIEWS ── */
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-platforms {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            /* ── FAQ ── */
+            .faq-question {
+                font-size: 0.92rem;
+            }
+
+            /* ── AREAS ── */
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            /* ── BLOG ── */
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* ── PORTAL ── */
+            .portal-body {
+                flex-direction: column;
+            }
+
+            .portal-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                display: flex;
+                gap: 0;
+                overflow-x: auto;
+                padding: 10px 0;
+            }
+
+            .portal-nav-item {
+                white-space: nowrap;
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .portal-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .portal-main {
+                padding: 20px;
+            }
+
+            /* ── CONTACT ── */
+            #contact {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .contact-left {
+                padding: 56px 24px 40px;
+            }
+
+            .contact-left p {
+                max-width: 100%;
+            }
+
+            .contact-right {
+                padding: 40px 24px 56px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            /* ── FOOTER ── */
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            footer {
+                padding: 48px 0 32px;
+            }
+        }
+
+        /* ══════════════════════════════════════
+           SMALL MOBILE  (≤ 480px)
+        ══════════════════════════════════════ */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            /* Hero */
+            .hero-headline {
+                font-size: clamp(1.9rem, 9vw, 2.6rem);
+            }
+
+            .hero-stat {
+                width: 50%;
+            }
+
+            /* Services */
+            .service-card {
+                min-height: 260px;
+            }
+
+            .service-card h3 {
+                font-size: 1.25rem;
+            }
+
+            /* Pool cards */
+            .pool-card {
+                min-height: 380px;
+            }
+
+            .pool-card-body h3 {
+                font-size: 1.7rem;
+            }
+
+            /* Gallery */
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8, 200px);
+            }
+
+            .gallery-cell:nth-child(1) {
+                grid-column: span 1;
+            }
+
+            .gallery-cell:nth-child(5) {
+                grid-column: span 1;
+            }
+
+            /* Areas */
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Footer */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            /* Portal stats */
+            .portal-stats {
+                grid-template-columns: 1fr;
+            }
+
+            /* Calc price */
+            .calc-price {
+                font-size: 1.9rem;
+            }
+
+            /* Pricing */
+            .pricing-price {
+                font-size: 1.7rem;
+            }
+
+            /* Section titles */
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.65rem;
+            }
+        }
     </style>
 </head>
 
