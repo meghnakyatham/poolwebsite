@@ -1,0 +1,3712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiberluxPools — Your Dream Pool Starts Here</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --navy: #0d3d56;
+            --teal: #1a7fa8;
+            --teal-light: #3aa8c8;
+            --teal-pale: #e8f5f9;
+            --teal-very-pale: #f0f8fa;
+            --accent: #4abdd4;
+            --gold: #e8a830;
+            --white: #ffffff;
+            --off-white: #f8fbfc;
+            --text-dark: #0d2d3f;
+            --text-mid: #2c5a72;
+            --text-light: #5a8a9f;
+            --border: #d0e8f0;
+            --shadow: 0 4px 24px rgba(13, 61, 86, 0.10);
+            --shadow-lg: 0 12px 48px rgba(13, 61, 86, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            line-height: 1.15;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: #0b3349ee;
+            backdrop-filter: blur(10px);
+            height: 58px;
+            display: flex;
+            align-items: center;
+            padding: 0 32px;
+            gap: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #1a7fa8, #4abdd4);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+
+        .nav-logo span:first-of-type {
+            color: var(--white);
+        }
+
+        .nav-logo .logo-accent {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex: 1;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.88rem;
+            font-weight: 400;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .btn-ghost-nav {
+            padding: 7px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            background: transparent;
+            transition: all 0.2s;
+        }
+
+        .btn-ghost-nav:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary-nav {
+            padding: 8px 20px;
+            background: var(--teal);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary-nav:hover {
+            background: var(--teal-light);
+            transform: translateY(-1px);
+        }
+
+        /* ─── HERO ─── */
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #0a2f44;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, #0a2c40cc 30%, #0d3d5699 100%),
+                url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1600&q=80') center/cover no-repeat;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 22px;
+            justify-content: center;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--teal-light);
+            flex-shrink: 0;
+        }
+
+        .hero-headline {
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 22px;
+            line-height: 1.08;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            padding: 14px 28px;
+            background: var(--teal);
+            border: none;
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(26, 127, 168, 0.35);
+        }
+
+        .btn-outline-white {
+            padding: 14px 28px;
+            background: transparent;
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 28px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .hero-stat {
+            padding-right: 36px;
+            margin-right: 36px;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-stat:last-child {
+            border-right: none;
+            margin-right: 0;
+            padding-right: 0;
+        }
+
+        .hero-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 2px;
+        }
+
+        .hero-stat-num .sup {
+            font-size: 1rem;
+            margin-top: 4px;
+            color: var(--accent);
+        }
+
+        .hero-stat-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+        }
+
+        /* ─── SECTION COMMON ─── */
+        section {
+            padding: 96px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            text-align: center;
+            line-height: 1.15;
+        }
+
+        .section-sub {
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto 56px;
+        }
+
+        /* ─── SERVICES ─── */
+        #services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        /* ─── SERVICE CARDS — Clean Reveal Design ─── */
+        .service-card {
+            border-radius: 16px;
+            padding: 0;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+            overflow: hidden;
+            background: #0a2535;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 56px rgba(13, 61, 86, 0.28);
+        }
+
+        /* Background photo */
+        .service-card-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.55s ease;
+            z-index: 0;
+        }
+
+        .service-card:hover .service-card-bg {
+            transform: scale(1.07);
+        }
+
+        /* Dark overlay — heavier at bottom, lighter at top */
+        .service-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(5, 22, 35, 0.93) 0%,
+                    rgba(5, 22, 35, 0.60) 45%,
+                    rgba(5, 22, 35, 0.18) 100%);
+            z-index: 1;
+            transition: background 0.35s;
+        }
+
+        .service-card:hover .service-card-overlay {
+            background: linear-gradient(to top,
+                    rgba(5, 22, 35, 0.97) 0%,
+                    rgba(5, 22, 35, 0.72) 55%,
+                    rgba(5, 22, 35, 0.25) 100%);
+        }
+
+        /* Content wrapper */
+        .service-card-content {
+            position: relative;
+            z-index: 2;
+            padding: 30px 28px 28px;
+        }
+
+        /* Teal accent bar above title */
+        .service-accent-bar {
+            width: 36px;
+            height: 3px;
+            background: #4abdd4;
+            border-radius: 2px;
+            margin-bottom: 14px;
+            transition: width 0.35s ease;
+        }
+
+        .service-card:hover .service-accent-bar {
+            width: 60px;
+        }
+
+        /* Title — large, bold, always visible */
+        .service-card h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0;
+            line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Description — hidden by default, slides up on hover */
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.92);
+            margin-top: 0;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s ease, opacity 0.35s ease, margin-top 0.35s ease;
+        }
+
+        .service-card:hover p {
+            max-height: 80px;
+            opacity: 1;
+            margin-top: 12px;
+        }
+
+        /* CTA link */
+        .service-link {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #4abdd4;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 0;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s ease 0.05s, opacity 0.35s ease 0.05s, margin-top 0.35s ease;
+        }
+
+        .service-card:hover .service-link {
+            max-height: 40px;
+            opacity: 1;
+            margin-top: 14px;
+        }
+
+        .service-link:hover {
+            color: #ffffff;
+        }
+
+        .service-link::after {
+            content: ' →';
+        }
+
+        /* ─── WHY US ─── */
+        #why {
+            background: var(--off-white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-left .section-eyebrow,
+        .why-left .section-title {
+            text-align: left;
+        }
+
+        .why-left .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            margin-bottom: 24px;
+        }
+
+        .why-divider {
+            width: 48px;
+            height: 3px;
+            background: var(--teal);
+            margin-bottom: 36px;
+            border-radius: 2px;
+        }
+
+        .why-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .why-step {
+            display: flex;
+            gap: 20px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .why-step:last-child {
+            border-bottom: none;
+        }
+
+        .why-step-num {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--teal-very-pale);
+            border: 1.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--teal);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .why-step-body h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .why-step-body p {
+            font-size: 0.86rem;
+            line-height: 1.65;
+            color: var(--text-light);
+        }
+
+        .why-cta {
+            margin-top: 32px;
+            padding: 14px 28px;
+            background: var(--teal);
+            border: none;
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-block;
+        }
+
+        .why-cta:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+        }
+
+        .why-right {
+            position: relative;
+        }
+
+        .why-img-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+        }
+
+        .why-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .why-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--teal);
+            border-radius: 12px;
+            padding: 18px 22px;
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .why-badge-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 3px;
+        }
+
+        .why-badge-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ─── POOL TYPES ─── */
+        #pool-types {
+            background: var(--off-white);
+        }
+
+        .pool-filter {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 52px;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            border: 1.5px solid var(--border);
+            background: var(--white);
+            color: var(--text-mid);
+            font-size: 0.92rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s;
+            letter-spacing: 0.01em;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--teal);
+            color: var(--teal);
+            background: var(--teal-very-pale);
+        }
+
+        .filter-btn.active {
+            background: var(--teal);
+            border-color: var(--teal);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(26, 127, 168, 0.3);
+        }
+
+        .pool-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        /* ─── Pool Card ─── */
+        .pool-card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .pool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 64px rgba(13, 61, 86, 0.25);
+        }
+
+        /* Full bleed photo */
+        .pool-card-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            z-index: 0;
+        }
+
+        .pool-card:hover .pool-card-img {
+            transform: scale(1.06);
+        }
+
+        /* Gradient overlay — readable at bottom */
+        .pool-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(5, 20, 35, 0.96) 0%,
+                    rgba(5, 20, 35, 0.65) 45%,
+                    rgba(5, 20, 35, 0.10) 100%);
+            z-index: 1;
+            transition: background 0.4s;
+        }
+
+        .pool-card:hover::after {
+            background: linear-gradient(to top,
+                    rgba(5, 20, 35, 0.98) 0%,
+                    rgba(5, 20, 35, 0.72) 55%,
+                    rgba(5, 20, 35, 0.15) 100%);
+        }
+
+        /* Card body sits above overlay */
+        .pool-card-body {
+            position: relative;
+            z-index: 2;
+            padding: 32px 28px 28px;
+        }
+
+        /* Material tag pill */
+        .pool-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #4abdd4;
+            background: rgba(74, 189, 212, 0.15);
+            border: 1px solid rgba(74, 189, 212, 0.35);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+
+        /* Pool name — large, serif, white */
+        .pool-card-body h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Tagline under name */
+        .pool-tagline {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 18px;
+            font-style: italic;
+        }
+
+        /* Spec pills row */
+        .pool-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .pool-spec-pill {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.88);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 5px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Key benefits list */
+        .pool-benefits {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 24px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.45s ease, opacity 0.4s ease, margin-bottom 0.4s ease;
+        }
+
+        .pool-card:hover .pool-benefits {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .pool-benefits li {
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.85);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pool-benefits li::before {
+            content: '✓';
+            color: #4abdd4;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* Divider line */
+        .pool-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            margin-bottom: 20px;
+        }
+
+        /* Price + CTA row */
+        .pool-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pool-price {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .pool-price span {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.55);
+            margin-left: 4px;
+        }
+
+        .pool-quote-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--teal);
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #ffffff;
+            transition: all 0.25s;
+        }
+
+        .pool-quote-link:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+            gap: 12px;
+        }
+
+        .pool-quote-link::after {
+            content: '→';
+        }
+
+        /* ─── PRICING CALCULATOR ─── */
+        #calculator {
+            background: var(--teal-very-pale);
+        }
+
+        .calc-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .calc-left {
+            padding: 44px 40px;
+        }
+
+        .calc-left h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-mid);
+            margin-bottom: 8px;
+        }
+
+        .form-label .label-val {
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a7fa8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            cursor: pointer;
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: var(--teal);
+        }
+
+        input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(to right, var(--teal) 50%, var(--border) 50%);
+            outline: none;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--teal);
+            border: 2px solid var(--white);
+            box-shadow: 0 2px 8px rgba(26, 127, 168, 0.3);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+            box-shadow: 0 4px 12px rgba(26, 127, 168, 0.4);
+        }
+
+        .addon-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .addon-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .addon-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--teal);
+            cursor: pointer;
+        }
+
+        .calc-right {
+            background: var(--navy);
+            padding: 44px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .calc-result-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 12px;
+        }
+
+        .calc-price {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+            line-height: 1;
+        }
+
+        .calc-range {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 36px;
+        }
+
+        .calc-breakdown {
+            margin-bottom: 32px;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .calc-row:last-child {
+            border-bottom: none;
+        }
+
+        .calc-row-val {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .calc-note {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .btn-get-quote {
+            width: 100%;
+            padding: 14px;
+            background: var(--white);
+            border: none;
+            border-radius: 10px;
+            color: var(--navy);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-get-quote:hover {
+            background: var(--accent);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .financing-note {
+            text-align: center;
+            font-size: 0.76rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 10px;
+        }
+
+        /* ─── HOW IT WORKS ─── */
+        #process {
+            background: var(--white);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 20px;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .process-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--teal);
+            flex-shrink: 0;
+            margin-top: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-connector {
+            position: absolute;
+            left: 7px;
+            top: 36px;
+            bottom: 0;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .process-step:last-child .step-connector {
+            display: none;
+        }
+
+        .process-step-body h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .process-step-body p {
+            font-size: 0.86rem;
+            line-height: 1.65;
+            color: var(--text-light);
+        }
+
+        .process-section-title {
+            text-align: left;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            margin-bottom: 12px;
+        }
+
+        .process-section-sub {
+            text-align: left;
+            font-size: 0.92rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .process-img-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            position: sticky;
+            top: 80px;
+        }
+
+        .process-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ─── PRICING CARDS ─── */
+        #pricing {
+            background: var(--off-white);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 28px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 1px var(--teal), var(--shadow-lg);
+            transform: scale(1.02);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--teal);
+            color: var(--white);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .pricing-tier {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .pricing-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 6px;
+        }
+
+        .pricing-installed {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-mid);
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .btn-outline-teal {
+            width: 100%;
+            padding: 13px;
+            border: 1.5px solid var(--teal);
+            border-radius: 10px;
+            background: transparent;
+            color: var(--teal);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: block;
+            text-align: center;
+        }
+
+        .btn-outline-teal:hover {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        .btn-filled-teal {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: var(--teal);
+            color: var(--white);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: block;
+            text-align: center;
+        }
+
+        .btn-filled-teal:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+        }
+
+        .financing-banner {
+            background: var(--teal-very-pale);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .financing-banner-left h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .financing-banner-left p {
+            font-size: 0.84rem;
+            color: var(--text-light);
+        }
+
+        .btn-check-rate {
+            padding: 11px 24px;
+            background: var(--navy);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-check-rate:hover {
+            background: var(--teal);
+        }
+
+        /* ─── GALLERY ─── */
+        #gallery {
+            background: #0d2535;
+        }
+
+        #gallery .section-eyebrow {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        #gallery .section-title {
+            color: #ffffff;
+        }
+
+        #gallery .section-sub {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 240px 240px;
+            gap: 10px;
+            margin-bottom: 36px;
+        }
+
+        /* First cell spans 2 columns */
+        .gallery-cell:nth-child(1) {
+            grid-column: span 2;
+        }
+
+        /* 5th cell spans 2 columns (bottom-left) */
+        .gallery-cell:nth-child(5) {
+            grid-column: span 2;
+        }
+
+        .gallery-cell {
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .gallery-cell:hover img {
+            transform: scale(1.07);
+        }
+
+        /* Caption overlay on hover */
+        .gallery-caption {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(5, 20, 35, 0.88) 0%, rgba(5, 20, 35, 0.1) 55%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .gallery-cell:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        .gallery-caption-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #4abdd4;
+            margin-bottom: 5px;
+        }
+
+        .gallery-caption-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .gallery-cta {
+            text-align: center;
+            padding-top: 8px;
+        }
+
+        .gallery-cta-text {
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 20px;
+        }
+
+        .btn-gallery-portfolio {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 36px;
+            background: transparent;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-gallery-portfolio:hover {
+            background: var(--teal);
+            border-color: var(--teal);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(26, 127, 168, 0.4);
+            gap: 16px;
+        }
+
+        .btn-gallery-portfolio .arrow {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-gallery-portfolio:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .btn-outline-dark {
+            padding: 13px 28px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            background: transparent;
+            color: var(--text-dark);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline-dark:hover {
+            border-color: var(--teal);
+            color: var(--teal);
+        }
+
+        .btn-outline-dark::after {
+            content: '→';
+        }
+
+        /* ─── REVIEWS ─── */
+        #reviews {
+            background: var(--off-white);
+        }
+
+        .review-platforms {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .platform-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 18px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .stars {
+            color: #f5a623;
+            font-size: 0.85rem;
+        }
+
+        .platform-meta {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .btn-see-reviews {
+            padding: 10px 22px;
+            background: var(--teal);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-see-reviews:hover {
+            background: var(--teal-light);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .review-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        .review-stars {
+            color: #f5a623;
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+        }
+
+        .review-text {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--teal);
+            color: var(--white);
+            font-size: 0.78rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .reviewer-name {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .reviewer-meta {
+            font-size: 0.76rem;
+            color: var(--text-light);
+        }
+
+        /* ─── FAQ ─── */
+        #faq {
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 780px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 22px 0;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: var(--teal);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover {
+            color: var(--navy);
+        }
+
+        .faq-toggle {
+            width: 26px;
+            height: 26px;
+            border: 1.5px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--teal);
+            flex-shrink: 0;
+            transition: all 0.25s;
+            line-height: 1;
+        }
+
+        .faq-item.open .faq-toggle {
+            background: var(--teal);
+            border-color: var(--teal);
+            color: var(--white);
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding-bottom: 22px;
+            font-size: 0.90rem;
+            line-height: 1.75;
+            color: var(--text-light);
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-answer a {
+            color: var(--teal);
+            text-decoration: underline;
+        }
+
+        /* ─── SERVICE AREAS ─── */
+        #areas {
+            background: var(--teal-very-pale);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .area-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+
+        .area-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .area-city {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .area-county {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .area-count {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        .areas-cta {
+            text-align: center;
+        }
+
+        .btn-teal-solid {
+            padding: 13px 28px;
+            background: var(--teal);
+            border: none;
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-teal-solid:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-teal-solid::after {
+            content: '→';
+        }
+
+        /* ─── BLOG ─── */
+        #blog {
+            background: var(--white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .blog-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .blog-body {
+            padding: 22px;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--teal);
+            background: var(--teal-very-pale);
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .blog-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .blog-card p {
+            font-size: 0.84rem;
+            line-height: 1.65;
+            color: var(--text-light);
+            margin-bottom: 14px;
+        }
+
+        .blog-meta {
+            font-size: 0.76rem;
+            color: var(--text-light);
+        }
+
+        .blog-cta {
+            text-align: center;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn-ghost-dark {
+            padding: 12px 24px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            background: transparent;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-ghost-dark:hover {
+            border-color: var(--teal);
+            color: var(--teal);
+        }
+
+        .btn-ghost-dark::after {
+            content: '→';
+        }
+
+        .btn-admin {
+            padding: 12px 20px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            background: transparent;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-admin:hover {
+            color: var(--text-dark);
+            border-color: var(--text-light);
+        }
+
+        /* ─── CLIENT PORTAL ─── */
+        #portal {
+            background: var(--off-white);
+        }
+
+        .portal-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: var(--white);
+        }
+
+        .portal-header {
+            background: var(--navy);
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .portal-header-title {
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .portal-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .portal-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .portal-body {
+            display: flex;
+        }
+
+        .portal-sidebar {
+            width: 180px;
+            border-right: 1px solid var(--border);
+            padding: 20px 0;
+            flex-shrink: 0;
+        }
+
+        .portal-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            font-size: 0.86rem;
+            color: var(--text-mid);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .portal-nav-item:hover {
+            background: var(--teal-very-pale);
+            color: var(--teal);
+        }
+
+        .portal-nav-item.active {
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        .portal-nav-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.6;
+        }
+
+        .portal-main {
+            flex: 1;
+            padding: 28px;
+        }
+
+        .portal-project-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .progress-bar-bg {
+            background: var(--teal-very-pale);
+            border-radius: 8px;
+            height: 8px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, var(--teal), var(--accent));
+            height: 100%;
+            width: 68%;
+            border-radius: 8px;
+            transition: width 0.5s;
+        }
+
+        .portal-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .portal-stat-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .portal-stat-val {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 4px;
+        }
+
+        .portal-stat-val.green {
+            color: #27a06a;
+        }
+
+        .portal-stat-label {
+            font-size: 0.76rem;
+            color: var(--text-light);
+        }
+
+        .portal-update {
+            background: var(--teal-very-pale);
+            border-radius: 10px;
+            padding: 16px;
+            font-size: 0.86rem;
+            color: var(--text-dark);
+        }
+
+        .portal-update-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.82rem;
+            color: var(--text-mid);
+        }
+
+        .portal-cta-link {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 0.88rem;
+            color: var(--text-light);
+        }
+
+        .portal-cta-link a {
+            color: var(--teal);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* ─── CONTACT ─── */
+        #contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 520px;
+        }
+
+        .contact-left {
+            background: var(--navy);
+            padding: 72px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-left::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 60%, rgba(26, 127, 168, 0.22) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .contact-left .section-eyebrow {
+            text-align: left;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .contact-left h2 {
+            font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+            color: var(--white);
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .contact-left p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.7;
+            max-width: 380px;
+            margin-bottom: 36px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-info-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .contact-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.12);
+            margin-top: auto;
+            font-weight: 700;
+        }
+
+        .contact-right {
+            background: var(--off-white);
+            padding: 64px 56px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-right h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .contact-right .form-sub {
+            font-size: 0.86rem;
+            color: var(--text-light);
+            margin-bottom: 28px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.90rem;
+            color: var(--text-dark);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--teal);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #aac4d0;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .btn-send {
+            width: 100%;
+            padding: 15px;
+            background: var(--teal);
+            border: none;
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-send:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+        }
+
+        .form-privacy {
+            text-align: center;
+            font-size: 0.76rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--navy);
+            padding: 64px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {}
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .footer-brand p {
+            font-size: 0.84rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 280px;
+            margin-bottom: 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 8px;
+        }
+
+        .social-btn {
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .social-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .footer-col h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.86rem;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        /* ─── UTILITY ─── */
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+    <nav>
+        <div class="nav-logo">
+            <div class="nav-logo-icon">
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 7 C3 3, 6 1, 9 1 C12 1, 15 4, 17 7" stroke="white" stroke-width="1.8"
+                        stroke-linecap="round" fill="none" />
+                    <path d="M1 10 C4 7, 7 5.5, 9 5.5 C11 5.5, 14 7, 17 10" stroke="rgba(255,255,255,0.55)"
+                        stroke-width="1.5" stroke-linecap="round" fill="none" />
+                </svg>
+            </div>
+            <span>Fiberlux</span><span class="logo-accent">Pools</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#pool-types">Pool Types</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="btn-ghost-nav">Client Login</button>
+            <button class="btn-primary-nav"
+                onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Free Quote</button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">Licensed Pool Installer · Texas</div>
+            <h1 class="hero-headline">Your Dream Pool<br>Starts Here</h1>
+            <p class="hero-sub">Custom inground pool installation from design to your first dive. Fiberglass, concrete
+                &amp; vinyl — built in weeks, enjoyed for decades.</p>
+            <div class="hero-btns">
+                <button class="btn-primary"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Free Quote
+                    →</button>
+                <button class="btn-outline-white"
+                    onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Estimate My
+                    Cost</button>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">500<span class="sup">+</span></div>
+                    <div class="hero-stat-label">Pools Installed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">25<span class="sup">yr</span></div>
+                    <div class="hero-stat-label">Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">4.9<span class="sup">★</span></div>
+                    <div class="hero-stat-label">Google Rating</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">5<span class="sup">yr</span></div>
+                    <div class="hero-stat-label">Warranty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     SERVICES
+════════════════════════════════════════ -->
+    <section id="services">
+        <div class="container">
+            <div class="section-eyebrow">What We Install</div>
+            <h2 class="section-title">Complete Pool Installation Services</h2>
+            <p class="section-sub">Everything from a basic inground pool to a full backyard resort — we build it, permit
+                it, and hand you the keys.</p>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-card-bg" style="background-image: url('service_custom_pool.png')"></div>
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <div class="service-accent-bar"></div>
+                        <h3>Custom Inground Pools</h3>
+                        <p>Fiberglass, concrete &amp; vinyl — designed exactly for your yard &amp; budget.</p>
+                        <a class="service-link" href="#pool-types">Explore Pool Types</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-bg" style="background-image: url('service_spa_hottub.png')"></div>
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <div class="service-accent-bar"></div>
+                        <h3>Spa &amp; Hot Tub Integration</h3>
+                        <p>Year-round relaxation with hydrotherapy jets, LED lighting &amp; smart controls.</p>
+                        <a class="service-link" href="#contact">Get a Spa Quote</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-bg" style="background-image: url('service_renovation.png')"></div>
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <div class="service-accent-bar"></div>
+                        <h3>Pool Renovation &amp; Remodeling</h3>
+                        <p>We resurface, retile &amp; rebuild aging pools — making them look brand new.</p>
+                        <a class="service-link" href="#contact">Renovate My Pool</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-bg" style="background-image: url('service_automation.png')"></div>
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <div class="service-accent-bar"></div>
+                        <h3>Smart Pool Automation</h3>
+                        <p>Control your pool's lights, heat &amp; jets from your phone — from anywhere.</p>
+                        <a class="service-link" href="#contact">Add Smart Control</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-bg" style="background-image: url('service_water_features.png')"></div>
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <div class="service-accent-bar"></div>
+                        <h3>Water Features &amp; Landscaping</h3>
+                        <p>Waterfalls, fire bowls &amp; full backyard designs — we build the whole dream.</p>
+                        <a class="service-link" href="#gallery">View Projects</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-bg" style="background-image: url('service_permits.png')"></div>
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <div class="service-accent-bar"></div>
+                        <h3>Permits &amp; Inspections</h3>
+                        <p>We handle 100% of city permits, HOA submissions, and inspection scheduling. You never have to
+                            call the county — we do it all.</p>
+                        <a class="service-link" href="#process">See How It Works</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     WHY US
+════════════════════════════════════════ -->
+    <section id="why">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-left">
+                    <div class="section-eyebrow" style="text-align:left">Why FiberLux Pools</div>
+                    <h2 class="section-title" style="text-align:left">Why Homeowners Choose Us Over the Rest</h2>
+                    <div class="why-divider"></div>
+
+                    <div class="why-steps">
+                        <div class="why-step">
+                            <div class="why-step-num">1</div>
+                            <div class="why-step-body">
+                                <h4>25 Years of Proven Work</h4>
+                                <p>We've built over 500 pools across Texas. Our portfolio speaks louder than any
+                                    promise.</p>
+                            </div>
+                        </div>
+                        <div class="why-step">
+                            <div class="why-step-num">2</div>
+                            <div class="why-step-body">
+                                <h4>Transparent, Fixed Pricing</h4>
+                                <p>Your quote is your price. No change orders. No surprise invoices. Everything in
+                                    writing before a shovel breaks ground.</p>
+                            </div>
+                        </div>
+                        <div class="why-step">
+                            <div class="why-step-num">3</div>
+                            <div class="why-step-body">
+                                <h4>One Point of Contact</h4>
+                                <p>You speak to your dedicated project manager — not a call center. Weekly updates,
+                                    real-time photos, and answers within hours.</p>
+                            </div>
+                        </div>
+                        <div class="why-step">
+                            <div class="why-step-num">4</div>
+                            <div class="why-step-body">
+                                <h4>We Handle Everything</h4>
+                                <p>Permits, HOA approvals, utility locates, inspections. You show up for the reveal — we
+                                    handle every step between.</p>
+                            </div>
+                        </div>
+                        <div class="why-step">
+                            <div class="why-step-num">5</div>
+                            <div class="why-step-body">
+                                <h4>Lifetime Structural Warranty</h4>
+                                <p>Every pool we build carries a lifetime structural warranty backed by the
+                                    manufacturer. 5-year workmanship warranty included.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="why-cta" href="#contact">Schedule a Free Consultation</a>
+                </div>
+
+                <div class="why-right">
+                    <div class="why-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80"
+                            alt="Beautiful custom pool" loading="lazy">
+                    </div>
+                    <div class="why-badge">
+                        <div class="why-badge-num">500+</div>
+                        <div class="why-badge-label">Pools Built</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     POOL TYPES
+════════════════════════════════════════ -->
+    <section id="pool-types">
+        <div class="container">
+            <div class="section-eyebrow">Our Pool Lineup</div>
+            <h2 class="section-title">Choose Your Pool Type</h2>
+            <p class="section-sub">Three materials. Dozens of shapes. One goal — a pool you'll love for life.</p>
+
+            <div class="pool-filter">
+                <button class="filter-btn active" onclick="filterPools(this,'all')">All Pools</button>
+                <button class="filter-btn" onclick="filterPools(this,'fiberglass')">Fiberglass</button>
+                <button class="filter-btn" onclick="filterPools(this,'concrete')">Concrete</button>
+                <button class="filter-btn" onclick="filterPools(this,'vinyl')">Vinyl Liner</button>
+                <button class="filter-btn" onclick="filterPools(this,'plunge')">Plunge</button>
+                <button class="filter-btn" onclick="filterPools(this,'freeform')">Freeform</button>
+            </div>
+
+            <div class="pool-grid" id="poolGrid">
+
+                <!-- THE BIMINI — Fiberglass -->
+                <div class="pool-card" data-type="fiberglass">
+                    <img class="pool-card-img" src="pool_bimini.png" alt="The Bimini Fiberglass Pool">
+                    <div class="pool-card-body">
+                        <div class="pool-tag">Fiberglass</div>
+                        <h3>The Bimini</h3>
+                        <p class="pool-tagline">Smooth, elegant &amp; virtually maintenance-free</p>
+                        <div class="pool-specs">
+                            <span class="pool-spec-pill">12 × 24 ft</span>
+                            <span class="pool-spec-pill">Kidney Shape</span>
+                            <span class="pool-spec-pill">Installed in 5–10 days</span>
+                        </div>
+                        <ul class="pool-benefits">
+                            <li>Pre-built shell — drops in fast, no long waits</li>
+                            <li>Lifetime structural warranty included</li>
+                            <li>70% fewer chemicals than concrete pools</li>
+                            <li>Smooth gel-coat surface — no rough edges</li>
+                        </ul>
+                        <div class="pool-divider"></div>
+                        <div class="pool-footer">
+                            <div class="pool-price">From $42,000 <span>fully installed</span></div>
+                            <a class="pool-quote-link" href="#contact">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THE NASSAU — Concrete -->
+                <div class="pool-card" data-type="concrete">
+                    <img class="pool-card-img" src="pool_nassau.png" alt="The Nassau Concrete Pool">
+                    <div class="pool-card-body">
+                        <div class="pool-tag">Concrete · Gunite</div>
+                        <h3>The Nassau</h3>
+                        <p class="pool-tagline">100% custom — any shape, any size, any depth</p>
+                        <div class="pool-specs">
+                            <span class="pool-spec-pill">14 × 30 ft</span>
+                            <span class="pool-spec-pill">Rectangle</span>
+                            <span class="pool-spec-pill">Built to last 50+ yrs</span>
+                        </div>
+                        <ul class="pool-benefits">
+                            <li>Fully custom shape — no mold limits</li>
+                            <li>Premium finish options: plaster, pebble, tile</li>
+                            <li>Ideal for vanishing edges &amp; tanning ledges</li>
+                            <li>Adds highest resale value to your home</li>
+                        </ul>
+                        <div class="pool-divider"></div>
+                        <div class="pool-footer">
+                            <div class="pool-price">From $65,000 <span>fully installed</span></div>
+                            <a class="pool-quote-link" href="#contact">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THE LAGUNA — Vinyl Liner -->
+                <div class="pool-card" data-type="vinyl freeform">
+                    <img class="pool-card-img" src="pool_laguna.png" alt="The Laguna Vinyl Liner Pool">
+                    <div class="pool-card-body">
+                        <div class="pool-tag">Vinyl Liner</div>
+                        <h3>The Laguna</h3>
+                        <p class="pool-tagline">Most affordable — any shape, soft &amp; comfortable</p>
+                        <div class="pool-specs">
+                            <span class="pool-spec-pill">16 × 32 ft</span>
+                            <span class="pool-spec-pill">Freeform</span>
+                            <span class="pool-spec-pill">Most Affordable</span>
+                        </div>
+                        <ul class="pool-benefits">
+                            <li>Soft liner surface — gentle on feet &amp; skin</li>
+                            <li>Available in any shape or size you want</li>
+                            <li>Liner can be replaced if ever needed</li>
+                            <li>Lowest upfront cost of all pool types</li>
+                        </ul>
+                        <div class="pool-divider"></div>
+                        <div class="pool-footer">
+                            <div class="pool-price">From $38,000 <span>fully installed</span></div>
+                            <a class="pool-quote-link" href="#contact">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     PRICING CALCULATOR
+════════════════════════════════════════ -->
+    <section id="calculator">
+        <div class="container">
+            <div class="section-eyebrow">Instant Estimate</div>
+            <h2 class="section-title">How Much Does a Pool Cost?</h2>
+            <p class="section-sub">Get a ballpark estimate in 30 seconds. Exact quotes are always free — just ask.</p>
+
+            <div class="calc-wrap">
+                <div class="calc-left">
+                    <h3>Tell Us About Your Pool</h3>
+
+                    <div class="form-group">
+                        <label class="form-label">Pool Type</label>
+                        <select class="form-select" id="calcType" onchange="updateCalc()">
+                            <option value="fiberglass">Fiberglass (Fastest Install)</option>
+                            <option value="concrete">Concrete / Gunite</option>
+                            <option value="vinyl">Vinyl Liner</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Pool Size — <span class="label-val" id="sizeLabel">850 SQ
+                                FT</span></label>
+                        <input type="range" id="calcSize" min="300" max="1400" value="850" step="50"
+                            oninput="updateCalc()">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Shape</label>
+                        <select class="form-select" id="calcShape" onchange="updateCalc()">
+                            <option value="rect">Rectangle / Geometric</option>
+                            <option value="kidney">Kidney / Freeform</option>
+                            <option value="lagoon">Lagoon / Custom</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Add-Ons (Select All That Apply)</label>
+                        <div class="addon-group">
+                            <label class="addon-item"><input type="checkbox" id="addon-spa" value="12000"
+                                    onchange="updateCalc()"> Spa / Hot Tub (+$12,000)</label>
+                            <label class="addon-item"><input type="checkbox" id="addon-led" value="3500"
+                                    onchange="updateCalc()"> LED Lighting Package (+$3,500)</label>
+                            <label class="addon-item"><input type="checkbox" id="addon-auto" value="4000"
+                                    onchange="updateCalc()" checked> Smart Automation (+$4,000)</label>
+                            <label class="addon-item"><input type="checkbox" id="addon-deck" value="8000"
+                                    onchange="updateCalc()"> Travertine Deck (+$8,000)</label>
+                            <label class="addon-item"><input type="checkbox" id="addon-water" value="6000"
+                                    onchange="updateCalc()"> Water Feature (+$6,000)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-right">
+                    <div>
+                        <div class="calc-result-label">Your Estimated Investment</div>
+                        <div class="calc-price" id="calcTotal">$116,250</div>
+                        <div class="calc-range" id="calcRangeText">Range: $102,500 – $132,500</div>
+                    </div>
+
+                    <div class="calc-breakdown">
+                        <div class="calc-row">
+                            <span>Pool Shell &amp; Installation</span>
+                            <span class="calc-row-val" id="breakdown-shell">$101,750</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Permits &amp; Site Prep</span>
+                            <span class="calc-row-val">$4,500</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Equipment Package</span>
+                            <span class="calc-row-val">$6,000</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Selected Add-Ons</span>
+                            <span class="calc-row-val" id="breakdown-addons">$4,000</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="calc-note">Estimate based on typical Texas projects. Exact pricing requires a site
+                            visit — always free, never pushy.</div>
+                        <button class="btn-get-quote"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get My
+                            Exact Quote →</button>
+                        <div class="financing-note">Financing available from $299/mo — ask us how</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     HOW IT WORKS / PROCESS
+════════════════════════════════════════ -->
+    <section id="process">
+        <div class="container">
+            <div class="process-grid">
+                <div class="process-left">
+                    <div class="section-eyebrow" style="text-align:left">How It Works</div>
+                    <h2 class="process-section-title">From First Call<br>to First Swim</h2>
+                    <p class="process-section-sub">Most pools complete in 8–12 weeks. Here's exactly what happens.</p>
+
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div style="position:relative; flex-shrink:0;">
+                                <div class="step-dot"></div>
+                                <div class="step-connector"></div>
+                            </div>
+                            <div class="process-step-body">
+                                <h4>Week 1 — Free Consultation &amp; Design</h4>
+                                <p>We visit your yard, take measurements, and present 3D design concepts. You approve
+                                    the design and sign — no surprises.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div style="position:relative; flex-shrink:0;">
+                                <div class="step-dot"></div>
+                                <div class="step-connector"></div>
+                            </div>
+                            <div class="process-step-body">
+                                <h4>Weeks 2–4 — Permits &amp; Site Prep</h4>
+                                <p>We handle all city permits, HOA approvals, and utility locates. Most permits take 2–4
+                                    weeks in Texas.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div style="position:relative; flex-shrink:0;">
+                                <div class="step-dot"></div>
+                                <div class="step-connector"></div>
+                            </div>
+                            <div class="process-step-body">
+                                <h4>Weeks 4–6 — Excavation &amp; Shell</h4>
+                                <p>The dig begins. Your pool shell is installed — fiberglass pools are in within 1–3
+                                    days; concrete takes 2–3 weeks to cure.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div style="position:relative; flex-shrink:0;">
+                                <div class="step-dot"></div>
+                                <div class="step-connector"></div>
+                            </div>
+                            <div class="process-step-body">
+                                <h4>Weeks 6–10 — Plumbing, Electrical &amp; Decking</h4>
+                                <p>All plumbing, electrical, automation, lighting, and coping is completed. Deck is
+                                    poured and cured.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div style="position:relative; flex-shrink:0;">
+                                <div class="step-dot"></div>
+                                <div class="step-connector" style="display:none"></div>
+                            </div>
+                            <div class="process-step-body">
+                                <h4>Week 10–12 — Final Inspection &amp; Handover</h4>
+                                <p>City inspection signed off. We fill your pool, balance the water, demonstrate all
+                                    equipment, and hand you the keys.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=80"
+                        alt="Pool construction process" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     PRICING CARDS
+════════════════════════════════════════ -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-eyebrow">Transparent Pricing</div>
+            <h2 class="section-title">Pool Installation Costs</h2>
+            <p class="section-sub">No bait-and-switch. Here are real price ranges for Texas pool installations.</p>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-tier">Most Affordable</div>
+                    <h3>Vinyl Liner Pool</h3>
+                    <div class="pricing-price">$35K – $55K</div>
+                    <div class="pricing-installed">Fully installed, permitted &amp; inspected</div>
+                    <ul class="pricing-features">
+                        <li>Any shape or size</li>
+                        <li>Fastest to replace liner</li>
+                        <li>Smooth, soft surface</li>
+                        <li>Liner warranty included</li>
+                        <li>Equipment package included</li>
+                    </ul>
+                    <button class="btn-outline-teal"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Vinyl
+                        Quote</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-tier">Best Value</div>
+                    <h3>Fiberglass Pool</h3>
+                    <div class="pricing-price">$45K – $75K</div>
+                    <div class="pricing-installed">Fully installed, permitted &amp; inspected</div>
+                    <ul class="pricing-features">
+                        <li>Installed in 5–10 days</li>
+                        <li>Lifetime structural warranty</li>
+                        <li>Lowest lifetime maintenance cost</li>
+                        <li>70% fewer chemicals needed</li>
+                        <li>Equipment + automation included</li>
+                    </ul>
+                    <button class="btn-filled-teal"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a
+                        Fiberglass Quote</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-tier">Most Custom</div>
+                    <h3>Concrete / Gunite</h3>
+                    <div class="pricing-price">$60K – $120K+</div>
+                    <div class="pricing-installed">Fully installed, permitted &amp; inspected</div>
+                    <ul class="pricing-features">
+                        <li>100% custom shape &amp; size</li>
+                        <li>Any depth or feature</li>
+                        <li>Premium finish options</li>
+                        <li>Built to last 50+ years</li>
+                        <li>Tanning ledges, grottos, more</li>
+                    </ul>
+                    <button class="btn-outline-teal"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Concrete
+                        Quote</button>
+                </div>
+            </div>
+
+            <div class="financing-banner">
+                <div class="financing-banner-left">
+                    <h4>
+                        <svg width="18" height="13" viewBox="0 0 18 13" fill="none" style="flex-shrink:0">
+                            <rect x="1" y="1" width="16" height="11" rx="2" stroke="#1a7fa8" stroke-width="1.4"
+                                fill="none" />
+                            <path d="M1 5 L17 5" stroke="#1a7fa8" stroke-width="1.4" />
+                            <rect x="3" y="8" width="4" height="1.5" rx="0.5" fill="#1a7fa8" />
+                        </svg>
+                        Financing Available — Own Your Pool From $299/Month
+                    </h4>
+                    <p>We partner with Lyon Financial &amp; HFS Financial. Get pre-approved in minutes with no impact to
+                        your credit score.</p>
+                </div>
+                <button class="btn-check-rate">Check My Rate →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     GALLERY
+════════════════════════════════════════ -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-eyebrow">Our Work</div>
+            <h2 class="section-title">500+ Pools Built Across Texas</h2>
+            <p class="section-sub">Real projects. Real homeowners. Click any photo to see the full project.</p>
+
+            <div class="gallery-grid">
+
+                <!-- Cell 1: WIDE — Excavation -->
+                <div class="gallery-cell">
+                    <img src="gallery_excavation.png" alt="Pool excavation in progress" loading="lazy">
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-label">Construction</div>
+                        <div class="gallery-caption-title">Excavation Day — Austin, TX</div>
+                    </div>
+                </div>
+
+                <!-- Cell 2 -->
+                <div class="gallery-cell">
+                    <img src="gallery_tile_work.png" alt="Pool tile installation" loading="lazy">
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-label">Craftsmanship</div>
+                        <div class="gallery-caption-title">Hand-Laid Tile Work</div>
+                    </div>
+                </div>
+
+                <!-- Cell 3 -->
+                <div class="gallery-cell">
+                    <img src="gallery_plumbing_crew.png" alt="Crew installing pool plumbing" loading="lazy">
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-label">Installation</div>
+                        <div class="gallery-caption-title">Plumbing Rough-In, Week 6</div>
+                    </div>
+                </div>
+
+                <!-- Cell 4: Shell install -->
+                <div class="gallery-cell">
+                    <img src="gallery_shell_install.png" alt="Fiberglass shell being installed" loading="lazy">
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-label">Fiberglass</div>
+                        <div class="gallery-caption-title">Shell Drop-In — 1 Day Install</div>
+                    </div>
+                </div>
+
+                <!-- Cell 5: WIDE — Family enjoying pool -->
+                <div class="gallery-cell">
+                    <img src="gallery_family_pool.png" alt="Family enjoying their new pool" loading="lazy">
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-label">Completed — Client Photo</div>
+                        <div class="gallery-caption-title">The Martinez Family — Houston, TX</div>
+                    </div>
+                </div>
+
+                <!-- Cell 6 -->
+                <div class="gallery-cell">
+                    <img src="gallery_kids_summer.png" alt="Kids playing in pool" loading="lazy">
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-label">Summer 2024</div>
+                        <div class="gallery-caption-title">First Summer in Their New Pool</div>
+                    </div>
+                </div>
+
+                <!-- Cell 7 -->
+                <div class="gallery-cell">
+                    <img src="gallery_couple_pool.png" alt="Couple relaxing by pool" loading="lazy">
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-label">Client Story</div>
+                        <div class="gallery-caption-title">The Thompsons — Plano, TX</div>
+                    </div>
+                </div>
+
+                <!-- Cell 8: Completed handover -->
+                <div class="gallery-cell">
+                    <img src="gallery_finished_pool.png" alt="Pool handover to client" loading="lazy">
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-label">Handover Day</div>
+                        <div class="gallery-caption-title">Keys to Your Pool — Day 72</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="gallery-cta">
+                <p class="gallery-cta-text">Showing 8 of 500+ completed projects across Texas</p>
+                <button class="btn-gallery-portfolio">
+                    View Full Portfolio <span class="arrow">&rarr;</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     REVIEWS
+════════════════════════════════════════ -->
+    <section id="reviews">
+        <div class="container">
+            <div class="section-eyebrow">What Homeowners Say</div>
+            <h2 class="section-title">Real Reviews from<br>Real Texas Families</h2>
+
+            <div class="review-platforms">
+                <div class="platform-badge">
+                    <div>
+                        <div style="font-weight:600;font-size:0.9rem">Google</div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="platform-meta">4.9 · 280 reviews</div>
+                </div>
+                <div class="platform-badge">
+                    <div>
+                        <div style="font-weight:600;font-size:0.9rem">Houzz</div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="platform-meta">4.8 · 142 reviews</div>
+                </div>
+                <div class="platform-badge">
+                    <div>
+                        <div style="font-weight:600;font-size:0.9rem">BBB</div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="platform-meta">A+ Accredited</div>
+                </div>
+                <button class="btn-see-reviews">See All Reviews</button>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"They finished our pool 3 weeks ahead of schedule. Every question I had was
+                        answered within hours. The pool looks exactly like the 3D render they showed us on day one."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">JM</div>
+                        <div>
+                            <div class="reviewer-name">Jennifer Martinez</div>
+                            <div class="reviewer-meta">Google Review · Austin, TX · Fiberglass Pool</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"3 years in and the fiberglass still looks brand new. Minimal chemicals, zero
+                        cracks. My neighbor who went with a concrete pool is resurfacing already. Best decision we
+                        made."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">RT</div>
+                        <div>
+                            <div class="reviewer-name">Robert Thompson</div>
+                            <div class="reviewer-meta">Houzz Review · Houston, TX · Fiberglass + Spa</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"They handled everything — permits, HOA approval, inspections. We literally
+                        just showed up the day of the handover. The fixed price quote was exactly what we paid. Zero
+                        surprises."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">SK</div>
+                        <div>
+                            <div class="reviewer-name">Sarah &amp; Kevin Walsh</div>
+                            <div class="reviewer-meta">Google Review · Dallas, TX · Concrete Pool</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     FAQ
+════════════════════════════════════════ -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-eyebrow">Common Questions</div>
+            <h2 class="section-title">Everything You Need to Know<br>Before Building a Pool</h2>
+
+            <div class="faq-list">
+                <div class="faq-item open">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How much does a pool cost in Texas?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        In Texas, a vinyl liner pool typically runs $35,000–$55,000 installed. Fiberglass pools cost
+                        $45,000–$75,000. Concrete/gunite pools start at $60,000 and can reach $120,000+ for large luxury
+                        builds. All prices include permits, excavation, equipment, and finishing. Use our <a
+                            href="#calculator">cost calculator above</a> to get an instant estimate.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How long does pool installation take?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Most pools are complete in 8–12 weeks from signing. Fiberglass pools are the fastest — the shell
+                        drops in within 1–3 days, and the full project wraps in 6–10 weeks. Concrete pools take longer
+                        due to the curing process, typically 10–16 weeks. Permit timelines (2–4 weeks in Texas) are
+                        usually the biggest variable.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you handle all permits and HOA approvals?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes — 100%. We pull every city permit, submit all HOA documents, schedule utility locates, and
+                        coordinate all inspections. You will never have to call a county office or fill out a permit
+                        application. We've done this in every major Texas city and know exactly how to navigate each
+                        jurisdiction.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What financing options are available?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        We partner with Lyon Financial and HFS Financial — two of the most competitive pool financing
+                        lenders in the country. You can get pre-approved in under 5 minutes with no hard credit pull.
+                        Terms range from 5 to 20 years, with rates starting at 6.99% for qualified borrowers. Financing
+                        starts from $299/month for a typical fiberglass pool.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What warranty do you provide?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Every pool we build carries a lifetime structural warranty backed by the manufacturer
+                        (fiberglass shells only). Additionally, we provide a 5-year workmanship warranty covering
+                        plumbing, electrical, decking, and coping. Equipment is covered under the manufacturer's
+                        warranty, which we register on your behalf at handover.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Fiberglass vs. concrete — which should I choose?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Fiberglass is the best choice for most homeowners — faster to install, lower lifetime
+                        maintenance costs (70% fewer chemicals), and a lifetime structural warranty. Choose concrete if
+                        you want a completely custom shape, vanishing edge, beach entry, or very large pool beyond
+                        standard fiberglass mold sizes. We'll help you make the right call during your free
+                        consultation.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Will a pool increase my home value?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        In Texas, a well-built inground pool typically adds 5–8% to home value, and in high-demand
+                        neighborhoods it can reach 10–15%. The ROI is higher in Texas than most states due to the long
+                        swimming season. A fiberglass pool with low maintenance costs is particularly attractive to
+                        future buyers.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do I need a fence around my pool?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes — Texas law requires a barrier (fence, wall, or approved pool cover) around all residential
+                        pools. The barrier must be at least 48 inches tall with a self-closing, self-latching gate. We
+                        handle all safety barrier requirements as part of your permit package and final inspection
+                        sign-off.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     SERVICE AREAS
+════════════════════════════════════════ -->
+    <section id="areas">
+        <div class="container">
+            <div class="section-eyebrow">Service Areas</div>
+            <h2 class="section-title">Pool Installation Across Texas</h2>
+            <p class="section-sub">We build in every major Texas city. Local knowledge, local crews, local permits —
+                handled.</p>
+
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-city">Austin</div>
+                    <div class="area-county">Travis County</div>
+                    <div class="area-count">142 pools built</div>
+                </div>
+                <div class="area-card">
+                    <div class="area-city">Houston</div>
+                    <div class="area-county">Harris County</div>
+                    <div class="area-count">98 pools built</div>
+                </div>
+                <div class="area-card">
+                    <div class="area-city">Dallas</div>
+                    <div class="area-county">Dallas County</div>
+                    <div class="area-count">76 pools built</div>
+                </div>
+                <div class="area-card">
+                    <div class="area-city">San Antonio</div>
+                    <div class="area-county">Bexar County</div>
+                    <div class="area-count">62 pools built</div>
+                </div>
+                <div class="area-card">
+                    <div class="area-city">Plano</div>
+                    <div class="area-county">Collin County</div>
+                    <div class="area-count">44 pools built</div>
+                </div>
+                <div class="area-card">
+                    <div class="area-city">Frisco</div>
+                    <div class="area-county">Collin County</div>
+                    <div class="area-count">38 pools built</div>
+                </div>
+                <div class="area-card">
+                    <div class="area-city">Katy</div>
+                    <div class="area-county">Fort Bend County</div>
+                    <div class="area-count">29 pools built</div>
+                </div>
+                <div class="area-card">
+                    <div class="area-city">McKinney</div>
+                    <div class="area-county">Collin County</div>
+                    <div class="area-count">24 pools built</div>
+                </div>
+            </div>
+
+            <div class="areas-cta">
+                <button class="btn-teal-solid">Check If We Serve Your Area</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     BLOG
+════════════════════════════════════════ -->
+    <section id="blog">
+        <div class="container">
+            <div class="section-eyebrow">Pool Knowledge Hub</div>
+            <h2 class="section-title">Expert Guides &amp; Pool Tips</h2>
+            <p class="section-sub">Everything you need to know before, during, and after your pool is built.</p>
+
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img class="blog-img" src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=80"
+                        alt="Pool cost guide" loading="lazy">
+                    <div class="blog-body">
+                        <span class="blog-tag">Cost Guide</span>
+                        <h3>How Much Does an Inground Pool Cost in Texas? (2024 Guide)</h3>
+                        <p>Real price ranges for fiberglass, concrete, and vinyl pools — including permits, equipment,
+                            and all add-ons.</p>
+                        <div class="blog-meta">June 12, 2024 · 8 min read</div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <img class="blog-img" src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=600&q=80"
+                        alt="Fiberglass vs concrete" loading="lazy">
+                    <div class="blog-body">
+                        <span class="blog-tag">Pool Types</span>
+                        <h3>Fiberglass vs. Concrete Pool: Which Is Right for Your Texas Backyard?</h3>
+                        <p>We break down lifetime costs, installation time, maintenance, and resale value — honestly.
+                        </p>
+                        <div class="blog-meta">May 28, 2024 · 6 min read</div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <img class="blog-img" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80"
+                        alt="Pool maintenance" loading="lazy">
+                    <div class="blog-body">
+                        <span class="blog-tag">Maintenance</span>
+                        <h3>New Pool Owner? Here's Your First-Year Maintenance Checklist</h3>
+                        <p>Weekly, monthly, and seasonal tasks to keep your new pool crystal-clear without spending a
+                            fortune.</p>
+                        <div class="blog-meta">May 10, 2024 · 5 min read</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-cta">
+                <button class="btn-ghost-dark">View All Articles</button>
+                <button class="btn-admin">Admin Login</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     CLIENT PORTAL
+════════════════════════════════════════ -->
+    <section id="portal">
+        <div class="container">
+            <div class="section-eyebrow">Your Project Hub</div>
+            <h2 class="section-title">Track Your Pool Build<br>in Real Time</h2>
+            <p class="section-sub">Current clients get a live dashboard — photos, timeline, documents, and direct
+                messaging with your project manager.</p>
+
+            <div class="portal-wrap">
+                <div class="portal-header">
+                    <div class="portal-header-title">Client Portal</div>
+                    <div class="portal-user">
+                        <div class="portal-avatar">JM</div>
+                        Jennifer Martinez — Project #FBX-2847
+                    </div>
+                </div>
+
+                <div class="portal-body">
+                    <div class="portal-sidebar">
+                        <div class="portal-nav-item active">
+                            <svg class="portal-nav-icon" viewBox="0 0 16 16" fill="none">
+                                <rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor"
+                                    stroke-width="1.4" />
+                                <rect x="9" y="1" width="6" height="6" rx="1" stroke="currentColor"
+                                    stroke-width="1.4" />
+                                <rect x="1" y="9" width="6" height="6" rx="1" stroke="currentColor"
+                                    stroke-width="1.4" />
+                                <rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor"
+                                    stroke-width="1.4" />
+                            </svg>
+                            Overview
+                        </div>
+                        <div class="portal-nav-item">
+                            <svg class="portal-nav-icon" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4" />
+                                <path d="M8 5 L8 8 L10.5 10.5" stroke="currentColor" stroke-width="1.4"
+                                    stroke-linecap="round" />
+                            </svg>
+                            Timeline
+                        </div>
+                        <div class="portal-nav-item">
+                            <svg class="portal-nav-icon" viewBox="0 0 16 16" fill="none">
+                                <rect x="2" y="1" width="12" height="14" rx="1.5" stroke="currentColor"
+                                    stroke-width="1.4" />
+                                <path d="M5 6 L11 6M5 9 L11 9M5 12 L8 12" stroke="currentColor" stroke-width="1.3"
+                                    stroke-linecap="round" />
+                            </svg>
+                            Documents
+                        </div>
+                        <div class="portal-nav-item">
+                            <svg class="portal-nav-icon" viewBox="0 0 16 16" fill="none">
+                                <path d="M2 3 L14 3 L14 10 C14 10.55 13.55 11 13 11 L3 11 C2.45 11 2 10.55 2 10 Z"
+                                    stroke="currentColor" stroke-width="1.4" fill="none" />
+                                <path d="M5 14 L8 11 L11 14" stroke="currentColor" stroke-width="1.3"
+                                    stroke-linecap="round" fill="none" />
+                            </svg>
+                            Contact PM
+                        </div>
+                    </div>
+
+                    <div class="portal-main">
+                        <div class="portal-project-title">The Bimini Fiberglass Pool · Austin, TX</div>
+                        <div class="progress-label">
+                            <span>Overall Completion</span>
+                            <span style="font-weight:600;color:var(--teal)">68%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+
+                        <div class="portal-stats">
+                            <div class="portal-stat-card">
+                                <div class="portal-stat-val">Wk 6</div>
+                                <div class="portal-stat-label">Current Week</div>
+                            </div>
+                            <div class="portal-stat-card">
+                                <div class="portal-stat-val">Wk 9</div>
+                                <div class="portal-stat-label">Est. Completion</div>
+                            </div>
+                            <div class="portal-stat-card">
+                                <div class="portal-stat-val green">On Track</div>
+                                <div class="portal-stat-label">Status</div>
+                            </div>
+                        </div>
+
+                        <div class="portal-update">
+                            <div class="portal-update-label">Latest Update — June 15</div>
+                            Shell installation complete. Plumbing rough-in starts Monday. Decking crew scheduled for
+                            June 20–22.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portal-cta-link">
+                Not yet a client? <a href="#contact">Schedule your free consultation →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     CONTACT + FOOTER
+════════════════════════════════════════ -->
+    <section id="contact" style="padding:0">
+        <div class="contact-left">
+            <div class="section-eyebrow">Start Your Project</div>
+            <h2>Get Your Free<br>Pool Quote Today</h2>
+            <p>No obligation. No pushy sales calls. Just a honest conversation about your backyard and your budget —
+                then a written quote within 48 hours.</p>
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                                d="M3 2 C2 2 1 3 1 4 C1 9.5 6.5 15 12 15 C13 15 14 14 14 13 L14 11 C14 10.5 13.6 10.1 13.1 10 L11.1 9.6 C10.6 9.5 10.1 9.7 9.8 10.1 L9.2 10.9 C7.8 10.2 5.8 8.2 5.1 6.8 L5.9 6.2 C6.3 5.9 6.5 5.4 6.4 4.9 L6 2.9 C5.9 2.4 5.5 2 5 2 Z"
+                                stroke="rgba(255,255,255,0.7)" stroke-width="1.3" fill="none" />
+                        </svg>
+                    </div>
+                    (555) 987-0123
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+                            <rect x="1" y="1" width="14" height="10" rx="1.5" stroke="rgba(255,255,255,0.7)"
+                                stroke-width="1.3" fill="none" />
+                            <path d="M1 3 L8 7 L15 3" stroke="rgba(255,255,255,0.7)" stroke-width="1.3" />
+                        </svg>
+                    </div>
+                    hello@fiberluxpools.com
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="6.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.3"
+                                fill="none" />
+                            <path d="M8 5 L8 8 L10.5 10.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.3"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    We reply within 24 hours, guaranteed
+                </div>
+            </div>
+            <div class="contact-brand">Fiberlux Pools</div>
+        </div>
+
+        <div class="contact-right">
+            <h3>Schedule a Free Consultation</h3>
+            <p class="form-sub">Takes 60 seconds. We'll reach out to book your in-home visit.</p>
+            <div class="contact-form">
+                <div class="form-row">
+                    <input type="text" class="form-input" placeholder="First name">
+                    <input type="text" class="form-input" placeholder="Last name">
+                </div>
+                <input type="email" class="form-input" placeholder="Your email address">
+                <input type="tel" class="form-input" placeholder="Your phone number">
+                <input type="text" class="form-input" placeholder="Pool type you're interested in">
+                <input type="text" class="form-input" placeholder="Your budget range">
+                <textarea class="form-textarea"
+                    placeholder="Tell us about your backyard and any features you have in mind..."></textarea>
+                <button class="btn-send">Send My Request — It's Free →</button>
+                <div class="form-privacy">
+                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
+                        <path d="M6 1 L1 3 L1 7 C1 9.8 3.2 12.4 6 13 C8.8 12.4 11 9.8 11 7 L11 3 Z" stroke="#aac4d0"
+                            stroke-width="1.2" fill="none" />
+                    </svg>
+                    Your information is private. We never share or sell it.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="nav-logo-icon">
+                            <svg width="16" height="12" viewBox="0 0 18 14" fill="none">
+                                <path d="M1 7 C3 3, 6 1, 9 1 C12 1, 15 4, 17 7" stroke="white" stroke-width="1.8"
+                                    stroke-linecap="round" fill="none" />
+                                <path d="M1 10 C4 7, 7 5.5, 9 5.5 C11 5.5, 14 7, 17 10" stroke="rgba(255,255,255,0.55)"
+                                    stroke-width="1.5" stroke-linecap="round" fill="none" />
+                            </svg>
+                        </div>
+                        Fiberlux<span style="color:var(--accent)">Pools</span>
+                    </div>
+                    <p>Texas's trusted custom pool builder since 1999. 500+ pools built. Licensed, insured, and built to
+                        last.</p>
+                    <div class="footer-socials">
+                        <div class="social-btn">IG</div>
+                        <div class="social-btn">FB</div>
+                        <div class="social-btn">HZ</div>
+                        <div class="social-btn">YT</div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Custom Inground Pools</a></li>
+                        <li><a href="#">Fiberglass Pools</a></li>
+                        <li><a href="#">Concrete Pools</a></li>
+                        <li><a href="#">Pool Renovation</a></li>
+                        <li><a href="#">Spa Installation</a></li>
+                        <li><a href="#">Water Features</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">Why Choose Us</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Our Process</a></li>
+                        <li><a href="#">Pricing Guide</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">(555) 987-0123</a></li>
+                        <li><a href="#">hello@fiberluxpools.com</a></li>
+                        <li><a href="#">Service Areas</a></li>
+                        <li><a href="#">Free Quote</a></li>
+                        <li><a href="#">Client Portal</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2024 Fiberlux Pools. All rights reserved. Licensed Pool Contractor — Texas License
+                    #LP-048291</span>
+                <span>Privacy Policy · Terms of Service</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+    <script>
+        /* ── FAQ toggle ── */
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+
+        /* ── Pool filter ── */
+        function filterPools(btn, type) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.querySelectorAll('.pool-card').forEach(card => {
+                if (type === 'all' || card.dataset.type.includes(type)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        /* ── Pricing calculator ── */
+        const basePrices = { fiberglass: 95, concrete: 145, vinyl: 65 }; // $/sqft
+        const shapeMult = { rect: 1, kidney: 1.06, lagoon: 1.12 };
+
+        function fmt(n) {
+            return '$' + Math.round(n).toLocaleString('en-US');
+        }
+
+        function updateCalc() {
+            const type = document.getElementById('calcType').value;
+            const size = parseInt(document.getElementById('calcSize').value);
+            const shape = document.getElementById('calcShape').value;
+
+            document.getElementById('sizeLabel').textContent = size.toLocaleString() + ' SQ FT';
+
+            /* update range track color */
+            const min = 300, max = 1400;
+            const pct = ((size - min) / (max - min)) * 100;
+            document.getElementById('calcSize').style.background =
+                `linear-gradient(to right, var(--teal) ${pct}%, var(--border) ${pct}%)`;
+
+            const shell = Math.round(size * basePrices[type] * shapeMult[shape]);
+            const permits = 4500, equipment = 6000;
+
+            let addons = 0;
+            ['spa', 'led', 'auto', 'deck', 'water'].forEach(id => {
+                const el = document.getElementById('addon-' + id);
+                if (el && el.checked) addons += parseInt(el.value);
+            });
+
+            const total = shell + permits + equipment + addons;
+            const low = Math.round(total * 0.885);
+            const high = Math.round(total * 1.14);
+
+            document.getElementById('calcTotal').textContent = fmt(total);
+            document.getElementById('calcRangeText').textContent = `Range: ${fmt(low)} – ${fmt(high)}`;
+            document.getElementById('breakdown-shell').textContent = fmt(shell);
+            document.getElementById('breakdown-addons').textContent = fmt(addons);
+        }
+
+        /* init */
+        updateCalc();
+
+        /* ── Contact section layout fix ── */
+        const contact = document.getElementById('contact');
+        contact.style.display = 'grid';
+        contact.style.gridTemplateColumns = '1fr 1fr';
+
+        /* ── Smooth active nav on scroll ── */
+        const sections = document.querySelectorAll('section[id], div[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.style.color = link.getAttribute('href') === '#' + entry.target.id
+                            ? 'white'
+                            : 'rgba(255,255,255,0.82)';
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>
