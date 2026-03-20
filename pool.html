@@ -2406,6 +2406,228 @@
             color: rgba(255, 255, 255, 0.35);
         }
 
+        /* ════════════════════════════════════════
+           UNIVERSAL BUTTON SYSTEM
+           (Standardized premium pill design)
+        ════════════════════════════════════════ */
+
+        /* 1. Universal Base Styling */
+        .btn-ghost-nav,
+        .btn-primary-nav,
+        .btn-primary,
+        .btn-outline-white,
+        .why-cta,
+        .pool-quote-link,
+        .btn-get-quote,
+        .btn-outline-teal,
+        .btn-filled-teal,
+        .btn-check-rate,
+        .btn-gallery-portfolio,
+        .btn-see-reviews,
+        .btn-send,
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: 50px;
+            /* Premium Pill Shape */
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            line-height: 1;
+            border: 1.5px solid transparent;
+            width: fit-content;
+        }
+
+        /* 2. Standardized Sizing */
+        /* Core Large CTA Buttons */
+        .btn-primary,
+        .btn-outline-white,
+        .why-cta,
+        .pool-quote-link,
+        .btn-outline-teal,
+        .btn-filled-teal,
+        .btn-check-rate,
+        .btn-gallery-portfolio,
+        .btn-see-reviews,
+        .btn-send {
+            padding: 16px 32px;
+            font-size: 0.95rem;
+        }
+
+        /* Nav Buttons (Smaller) */
+        .btn-ghost-nav,
+        .btn-primary-nav {
+            padding: 10px 24px;
+            font-size: 0.88rem;
+        }
+
+        /* Full Width Blocks */
+        .btn-get-quote,
+        .btn-outline-teal,
+        .btn-filled-teal {
+            width: 100%;
+        }
+
+        .btn-get-quote {
+            padding: 16px 24px;
+            font-size: 0.95rem;
+        }
+
+        /* 3. Universal Lift & Glow Animation */
+        .btn-ghost-nav:hover,
+        .btn-primary-nav:hover,
+        .btn-primary:hover,
+        .btn-outline-white:hover,
+        .why-cta:hover,
+        .pool-quote-link:hover,
+        .btn-get-quote:hover,
+        .btn-outline-teal:hover,
+        .btn-filled-teal:hover,
+        .btn-check-rate:hover,
+        .btn-gallery-portfolio:hover,
+        .btn-see-reviews:hover,
+        .btn-send:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Specific Glow Colors based on backgrounds */
+        .btn-primary:hover,
+        .btn-primary-nav:hover,
+        .why-cta:hover,
+        .pool-quote-link:hover,
+        .btn-filled-teal:hover,
+        .btn-see-reviews:hover,
+        .btn-send:hover {
+            box-shadow: 0 12px 28px rgba(26, 127, 168, 0.4);
+        }
+
+        .btn-outline-white:hover,
+        .btn-ghost-nav:hover {
+            box-shadow: 0 12px 28px rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-outline-teal:hover {
+            box-shadow: 0 12px 28px rgba(26, 127, 168, 0.25);
+        }
+
+        .btn-get-quote:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 4. Adaptive Colors & Borders */
+
+        /* Solid Teal Buttons (Primary Actions) */
+        .btn-primary-nav,
+        .btn-primary,
+        .why-cta,
+        .pool-quote-link,
+        .btn-filled-teal,
+        .btn-see-reviews,
+        .btn-send {
+            background: var(--teal);
+            color: #ffffff;
+            border-color: var(--teal);
+        }
+
+        .btn-primary-nav:hover,
+        .btn-primary:hover,
+        .why-cta:hover,
+        .pool-quote-link:hover,
+        .btn-filled-teal:hover,
+        .btn-see-reviews:hover,
+        .btn-send:hover {
+            background: var(--teal-light);
+            border-color: var(--teal-light);
+            color: #ffffff;
+        }
+
+        /* Outline White (For Dark Backgrounds like Hero & Nav) */
+        .btn-outline-white,
+        .btn-ghost-nav {
+            background: transparent;
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-outline-white:hover,
+        .btn-ghost-nav:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        /* Outline Teal (For Light Backgrounds like Pricing) */
+        .btn-outline-teal {
+            background: transparent;
+            color: var(--teal);
+            border-color: var(--teal);
+        }
+
+        .btn-outline-teal:hover {
+            background: var(--teal);
+            color: #ffffff;
+        }
+
+        /* Solid White Button (For Calculator's dark navy background) */
+        .btn-get-quote {
+            background: #ffffff;
+            color: var(--navy);
+            border-color: #ffffff;
+        }
+
+        .btn-get-quote:hover {
+            background: var(--teal-light);
+            color: #ffffff;
+            border-color: var(--teal-light);
+        }
+
+        /* Financing Rate Button (Dark Navy to contrast with pale background) */
+        .btn-check-rate {
+            background: var(--navy);
+            color: #ffffff;
+            border-color: var(--navy);
+        }
+
+        .btn-check-rate:hover {
+            background: var(--teal);
+            border-color: var(--teal);
+        }
+
+        /* 5. The Service Link Reveal Animation in Cards */
+        .service-link {
+            background: transparent;
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.4);
+            padding: 0 32px;
+            /* Allows smooth vertical reveal */
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            border-width: 0;
+            margin-top: 0;
+        }
+
+        .service-card:hover .service-link {
+            max-height: 60px;
+            opacity: 1;
+            margin-top: 18px;
+            padding: 14px 32px;
+            border-width: 1.5px;
+        }
+
+        .service-link:hover {
+            background: var(--teal-light);
+            border-color: var(--teal-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(26, 127, 168, 0.4);
+            color: #ffffff;
+        }
+
         /* ─── UTILITY ─── */
         .text-center {
             text-align: center;
