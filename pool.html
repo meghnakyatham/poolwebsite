@@ -401,12 +401,16 @@
         }
 
         .section-sub {
-            font-size: 0.98rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 1.05rem;
+            /* Upgraded size to be readable */
+            font-weight: 400;
             line-height: 1.7;
             color: var(--text-light);
-            text-align: center;
-            max-width: 560px;
-            margin: 0 auto 56px;
+            text-align: center !important;
+            max-width: 580px !important;
+            margin: 0 auto 56px !important;
+            display: block !important;
         }
 
         /* ─── SERVICES ─── */
@@ -2633,14 +2637,6 @@
             color: #ffffff;
         }
 
-        /* ─── P -> h2 PARAGRAPH OVERRIDE ─── */
-        h2.para-like {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-            font-weight: 400 !important;
-            margin: 0;
-            font-size: 1rem;
-        }
-
         /* ─── UTILITY ─── */
         .text-center {
             text-align: center;
@@ -2865,8 +2861,10 @@
             }
 
             .section-sub {
-                font-size: 0.92rem;
-                margin-bottom: 40px;
+                font-size: 0.98rem;
+                /* Scaled down slightly from desktop */
+                margin: 0 auto 40px !important;
+                text-align: center !important;
             }
 
             /* ── SERVICES ── */
