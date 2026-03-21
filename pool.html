@@ -16,6 +16,7 @@
         *::after {
             box-sizing: border-box;
             margin: 0;
+            font-size: 1rem;
             padding: 0;
         }
 
@@ -505,7 +506,7 @@
         }
 
         /* Description - hidden by default, slides up on hover */
-        .service-card p {
+        .service-card h2.para-like {
             font-size: 1rem;
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.92);
@@ -516,7 +517,7 @@
             transition: max-height 0.4s ease, opacity 0.35s ease, margin-top 0.35s ease;
         }
 
-        .service-card:hover p {
+        .service-card:hover h2.para-like {
             max-height: 80px;
             opacity: 1;
             margin-top: 12px;
@@ -622,7 +623,7 @@
             margin-bottom: 5px;
         }
 
-        .why-step-body p {
+        .why-step-body h2.para-like {
             font-size: 0.86rem;
             line-height: 1.65;
             color: var(--text-light);
@@ -1202,7 +1203,7 @@
             margin-bottom: 5px;
         }
 
-        .process-step-body p {
+        .process-step-body h2.para-like {
             font-size: 0.86rem;
             line-height: 1.65;
             color: var(--text-light);
@@ -1393,7 +1394,7 @@
             gap: 8px;
         }
 
-        .financing-banner-left p {
+        .financing-banner-left h2.para-like {
             font-size: 0.84rem;
             color: var(--text-light);
         }
@@ -1897,7 +1898,7 @@
             line-height: 1.3;
         }
 
-        .blog-card p {
+        .blog-card h2.para-like {
             font-size: 0.84rem;
             line-height: 1.65;
             color: var(--text-light);
@@ -2178,7 +2179,7 @@
             text-align: left;
         }
 
-        .contact-left p {
+        .contact-left h2.para-like {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.65);
             line-height: 1.7;
@@ -2340,7 +2341,7 @@
             color: var(--white);
         }
 
-        .footer-brand p {
+        .footer-brand h2.para-like {
             font-size: 0.84rem;
             line-height: 1.7;
             color: rgba(255, 255, 255, 0.5);
@@ -2632,6 +2633,14 @@
             color: #ffffff;
         }
 
+        /* ─── P -> h2 PARAGRAPH OVERRIDE ─── */
+        h2.para-like {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+            font-weight: 400 !important;
+            margin: 0;
+            font-size: 1rem;
+        }
+
         /* ─── UTILITY ─── */
         .text-center {
             text-align: center;
@@ -2871,7 +2880,7 @@
             }
 
             /* On mobile show description always (no hover needed) */
-            .service-card p {
+            .service-card h2.para-like {
                 max-height: 80px;
                 opacity: 1;
                 margin-top: 10px;
@@ -3079,7 +3088,7 @@
                 padding: 56px 24px 40px;
             }
 
-            .contact-left p {
+            .contact-left h2.para-like {
                 max-width: 100%;
             }
 
@@ -3280,8 +3289,9 @@
         <div class="container">
             <div class="section-eyebrow">What We Install</div>
             <h2 class="section-title">Complete Pool Installation Services</h2>
-            <p class="section-sub">Everything from a basic inground pool to a full backyard resort - we build it, permit
-                it, and hand you the keys.</p>
+            <h2 class="para-like section-sub">Everything from a basic inground pool to a full backyard resort - we build
+                it, permit
+                it, and hand you the keys.</h2>
 
             <div class="services-grid">
 
@@ -3291,7 +3301,8 @@
                     <div class="service-card-content">
                         <div class="service-accent-bar"></div>
                         <h3>Custom Inground Pools</h3>
-                        <p>Fiberglass, concrete &amp; vinyl - designed exactly for your yard &amp; budget.</p>
+                        <h2 class="para-like">Fiberglass, concrete &amp; vinyl - designed exactly for your yard &amp;
+                            budget.</h2>
                         <a class="service-link" href="#pool-types">Explore Pool Types</a>
                     </div>
                 </div>
@@ -3302,7 +3313,8 @@
                     <div class="service-card-content">
                         <div class="service-accent-bar"></div>
                         <h3>Spa &amp; Hot Tub Integration</h3>
-                        <p>Year-round relaxation with hydrotherapy jets, LED lighting &amp; smart controls.</p>
+                        <h2 class="para-like">Year-round relaxation with hydrotherapy jets, LED lighting &amp; smart
+                            controls.</h2>
                         <a class="service-link" href="#contact">Get a Spa Quote</a>
                     </div>
                 </div>
@@ -3313,7 +3325,8 @@
                     <div class="service-card-content">
                         <div class="service-accent-bar"></div>
                         <h3>Pool Renovation &amp; Remodeling</h3>
-                        <p>We resurface, retile &amp; rebuild aging pools - making them look brand new.</p>
+                        <h2 class="para-like">We resurface, retile &amp; rebuild aging pools - making them look brand
+                            new.</h2>
                         <a class="service-link" href="#contact">Renovate My Pool</a>
                     </div>
                 </div>
@@ -3324,7 +3337,8 @@
                     <div class="service-card-content">
                         <div class="service-accent-bar"></div>
                         <h3>Smart Pool Automation</h3>
-                        <p>Control your pool's lights, heat &amp; jets from your phone - from anywhere.</p>
+                        <h2 class="para-like">Control your pool's lights, heat &amp; jets from your phone - from
+                            anywhere.</h2>
                         <a class="service-link" href="#contact">Add Smart Control</a>
                     </div>
                 </div>
@@ -3335,7 +3349,8 @@
                     <div class="service-card-content">
                         <div class="service-accent-bar"></div>
                         <h3>Water Features &amp; Landscaping</h3>
-                        <p>Waterfalls, fire bowls &amp; full backyard designs - we build the whole dream.</p>
+                        <h2 class="para-like">Waterfalls, fire bowls &amp; full backyard designs - we build the whole
+                            dream.</h2>
                         <a class="service-link" href="#gallery">View Projects</a>
                     </div>
                 </div>
@@ -3346,8 +3361,9 @@
                     <div class="service-card-content">
                         <div class="service-accent-bar"></div>
                         <h3>Permits &amp; Inspections</h3>
-                        <p>We handle 100% of city permits, HOA submissions, and inspection scheduling. You never have to
-                            call the county - we do it all.</p>
+                        <h2 class="para-like">We handle 100% of city permits, HOA submissions, and inspection
+                            scheduling. You never have to
+                            call the county - we do it all.</h2>
                         <a class="service-link" href="#process">See How It Works</a>
                     </div>
                 </div>
@@ -3372,40 +3388,45 @@
                             <div class="why-step-num">1</div>
                             <div class="why-step-body">
                                 <h4>25 Years of Proven Work</h4>
-                                <p>We've built over 500 pools across Texas. Our portfolio speaks louder than any
-                                    promise.</p>
+                                <h2 class="para-like">We've built over 500 pools across Texas. Our portfolio speaks
+                                    louder than any
+                                    promise.</h2>
                             </div>
                         </div>
                         <div class="why-step">
                             <div class="why-step-num">2</div>
                             <div class="why-step-body">
                                 <h4>Transparent, Fixed Pricing</h4>
-                                <p>Your quote is your price. No change orders. No surprise invoices. Everything in
-                                    writing before a shovel breaks ground.</p>
+                                <h2 class="para-like">Your quote is your price. No change orders. No surprise invoices.
+                                    Everything in
+                                    writing before a shovel breaks ground.</h2>
                             </div>
                         </div>
                         <div class="why-step">
                             <div class="why-step-num">3</div>
                             <div class="why-step-body">
                                 <h4>One Point of Contact</h4>
-                                <p>You speak to your dedicated project manager - not a call center. Weekly updates,
-                                    real-time photos, and answers within hours.</p>
+                                <h2 class="para-like">You speak to your dedicated project manager - not a call center.
+                                    Weekly updates,
+                                    real-time photos, and answers within hours.</h2>
                             </div>
                         </div>
                         <div class="why-step">
                             <div class="why-step-num">4</div>
                             <div class="why-step-body">
                                 <h4>We Handle Everything</h4>
-                                <p>Permits, HOA approvals, utility locates, inspections. You show up for the reveal - we
-                                    handle every step between.</p>
+                                <h2 class="para-like">Permits, HOA approvals, utility locates, inspections. You show up
+                                    for the reveal - we
+                                    handle every step between.</h2>
                             </div>
                         </div>
                         <div class="why-step">
                             <div class="why-step-num">5</div>
                             <div class="why-step-body">
                                 <h4>Lifetime Structural Warranty</h4>
-                                <p>Every pool we build carries a lifetime structural warranty backed by the
-                                    manufacturer. 5-year workmanship warranty included.</p>
+                                <h2 class="para-like">Every pool we build carries a lifetime structural warranty backed
+                                    by the
+                                    manufacturer. 5-year workmanship warranty included.</h2>
                             </div>
                         </div>
                     </div>
@@ -3434,7 +3455,8 @@
         <div class="container">
             <div class="section-eyebrow">Our Pool Lineup</div>
             <h2 class="section-title">Choose Your Pool Type</h2>
-            <p class="section-sub">Three materials. Dozens of shapes. One goal - a pool you'll love for life.</p>
+            <h2 class="para-like section-sub">Three materials. Dozens of shapes. One goal - a pool you'll love for life.
+            </h2>
 
             <div class="pool-filter">
                 <button class="filter-btn active" onclick="filterPools(this,'all')">All Pools</button>
@@ -3453,7 +3475,7 @@
                     <div class="pool-card-body">
                         <div class="pool-tag">Fiberglass</div>
                         <h3>The Bimini</h3>
-                        <p class="pool-tagline">Smooth, elegant &amp; virtually maintenance-free</p>
+                        <h2 class="para-like pool-tagline">Smooth, elegant &amp; virtually maintenance-free</h2>
                         <div class="pool-specs">
                             <span class="pool-spec-pill">12 × 24 ft</span>
                             <span class="pool-spec-pill">Kidney Shape</span>
@@ -3479,7 +3501,7 @@
                     <div class="pool-card-body">
                         <div class="pool-tag">Concrete · Gunite</div>
                         <h3>The Nassau</h3>
-                        <p class="pool-tagline">100% custom - any shape, any size, any depth</p>
+                        <h2 class="para-like pool-tagline">100% custom - any shape, any size, any depth</h2>
                         <div class="pool-specs">
                             <span class="pool-spec-pill">14 × 30 ft</span>
                             <span class="pool-spec-pill">Rectangle</span>
@@ -3505,7 +3527,7 @@
                     <div class="pool-card-body">
                         <div class="pool-tag">Vinyl Liner</div>
                         <h3>The Laguna</h3>
-                        <p class="pool-tagline">Most affordable - any shape, soft &amp; comfortable</p>
+                        <h2 class="para-like pool-tagline">Most affordable - any shape, soft &amp; comfortable</h2>
                         <div class="pool-specs">
                             <span class="pool-spec-pill">16 × 32 ft</span>
                             <span class="pool-spec-pill">Freeform</span>
@@ -3536,7 +3558,8 @@
         <div class="container">
             <div class="section-eyebrow">Instant Estimate</div>
             <h2 class="section-title">How Much Does a Pool Cost?</h2>
-            <p class="section-sub">Get a ballpark estimate in 30 seconds. Exact quotes are always free - just ask.</p>
+            <h2 class="para-like section-sub">Get a ballpark estimate in 30 seconds. Exact quotes are always free - just
+                ask.</h2>
 
             <div class="calc-wrap">
                 <div class="calc-left">
@@ -3632,7 +3655,8 @@
                 <div class="process-left">
                     <div class="section-eyebrow" style="text-align:left">How It Works</div>
                     <h2 class="process-section-title">From First Call<br>to First Swim</h2>
-                    <p class="process-section-sub">Most pools complete in 8-12 weeks. Here's exactly what happens.</p>
+                    <h2 class="para-like process-section-sub">Most pools complete in 8-12 weeks. Here's exactly what
+                        happens.</h2>
 
                     <div class="process-steps">
                         <div class="process-step">
@@ -3642,8 +3666,9 @@
                             </div>
                             <div class="process-step-body">
                                 <h4>Week 1 - Free Consultation &amp; Design</h4>
-                                <p>We visit your yard, take measurements, and present 3D design concepts. You approve
-                                    the design and sign - no surprises.</p>
+                                <h2 class="para-like">We visit your yard, take measurements, and present 3D design
+                                    concepts. You approve
+                                    the design and sign - no surprises.</h2>
                             </div>
                         </div>
                         <div class="process-step">
@@ -3653,8 +3678,9 @@
                             </div>
                             <div class="process-step-body">
                                 <h4>Weeks 2-4 - Permits &amp; Site Prep</h4>
-                                <p>We handle all city permits, HOA approvals, and utility locates. Most permits take 2-4
-                                    weeks in Texas.</p>
+                                <h2 class="para-like">We handle all city permits, HOA approvals, and utility locates.
+                                    Most permits take 2-4
+                                    weeks in Texas.</h2>
                             </div>
                         </div>
                         <div class="process-step">
@@ -3664,8 +3690,9 @@
                             </div>
                             <div class="process-step-body">
                                 <h4>Weeks 4-6 - Excavation &amp; Shell</h4>
-                                <p>The dig begins. Your pool shell is installed - fiberglass pools are in within 1-3
-                                    days; concrete takes 2-3 weeks to cure.</p>
+                                <h2 class="para-like">The dig begins. Your pool shell is installed - fiberglass pools
+                                    are in within 1-3
+                                    days; concrete takes 2-3 weeks to cure.</h2>
                             </div>
                         </div>
                         <div class="process-step">
@@ -3675,8 +3702,9 @@
                             </div>
                             <div class="process-step-body">
                                 <h4>Weeks 6-10 - Plumbing, Electrical &amp; Decking</h4>
-                                <p>All plumbing, electrical, automation, lighting, and coping is completed. Deck is
-                                    poured and cured.</p>
+                                <h2 class="para-like">All plumbing, electrical, automation, lighting, and coping is
+                                    completed. Deck is
+                                    poured and cured.</h2>
                             </div>
                         </div>
                         <div class="process-step">
@@ -3686,8 +3714,9 @@
                             </div>
                             <div class="process-step-body">
                                 <h4>Week 10-12 - Final Inspection &amp; Handover</h4>
-                                <p>City inspection signed off. We fill your pool, balance the water, demonstrate all
-                                    equipment, and hand you the keys.</p>
+                                <h2 class="para-like">City inspection signed off. We fill your pool, balance the water,
+                                    demonstrate all
+                                    equipment, and hand you the keys.</h2>
                             </div>
                         </div>
                     </div>
@@ -3708,7 +3737,8 @@
         <div class="container">
             <div class="section-eyebrow">Transparent Pricing</div>
             <h2 class="section-title">Pool Installation Costs</h2>
-            <p class="section-sub">No bait-and-switch. Here are real price ranges for Texas pool installations.</p>
+            <h2 class="para-like section-sub">No bait-and-switch. Here are real price ranges for Texas pool
+                installations.</h2>
 
             <div class="pricing-cards">
                 <div class="pricing-card">
@@ -3775,8 +3805,9 @@
                         </svg>
                         Financing Available - Own Your Pool From $299/Month
                     </h4>
-                    <p>We partner with Lyon Financial &amp; HFS Financial. Get pre-approved in minutes with no impact to
-                        your credit score.</p>
+                    <h2 class="para-like">We partner with Lyon Financial &amp; HFS Financial. Get pre-approved in
+                        minutes with no impact to
+                        your credit score.</h2>
                 </div>
                 <button class="btn-check-rate">Check My Rate →</button>
             </div>
@@ -3790,7 +3821,8 @@
         <div class="container">
             <div class="section-eyebrow">Our Work</div>
             <h2 class="section-title">500+ Pools Built Across Texas</h2>
-            <p class="section-sub">Real projects. Real homeowners. Click any photo to see the full project.</p>
+            <h2 class="para-like section-sub">Real projects. Real homeowners. Click any photo to see the full project.
+            </h2>
 
             <div class="gallery-grid">
 
@@ -3869,7 +3901,7 @@
             </div>
 
             <div class="gallery-cta">
-                <p class="gallery-cta-text">Showing 8 of 500+ completed projects across Texas</p>
+                <h2 class="para-like gallery-cta-text">Showing 8 of 500+ completed projects across Texas</h2>
                 <button class="btn-gallery-portfolio">
                     View Full Portfolio <span class="arrow">&rarr;</span>
                 </button>
@@ -3913,8 +3945,10 @@
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"They finished our pool 3 weeks ahead of schedule. Every question I had was
-                        answered within hours. The pool looks exactly like the 3D render they showed us on day one."</p>
+                    <h2 class="para-like review-text">"They finished our pool 3 weeks ahead of schedule. Every question
+                        I had was
+                        answered within hours. The pool looks exactly like the 3D render they showed us on day one."
+                    </h2>
                     <div class="reviewer">
                         <img src="reviewer_jennifer.png" alt="Jennifer Martinez" class="reviewer-avatar">
                         <div>
@@ -3926,9 +3960,10 @@
 
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"3 years in and the fiberglass still looks brand new. Minimal chemicals, zero
+                    <h2 class="para-like review-text">"3 years in and the fiberglass still looks brand new. Minimal
+                        chemicals, zero
                         cracks. My neighbor who went with a concrete pool is resurfacing already. Best decision we
-                        made."</p>
+                        made."</h2>
                     <div class="reviewer">
                         <img src="reviewer_robert.png" alt="Robert Thompson" class="reviewer-avatar">
                         <div>
@@ -3940,9 +3975,10 @@
 
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"They handled everything - permits, HOA approval, inspections. We literally
+                    <h2 class="para-like review-text">"They handled everything - permits, HOA approval, inspections. We
+                        literally
                         just showed up the day of the handover. The fixed price quote was exactly what we paid. Zero
-                        surprises."</p>
+                        surprises."</h2>
                     <div class="reviewer">
                         <img src="reviewer_walsh.png" alt="Sarah and Kevin Walsh" class="reviewer-avatar">
                         <div>
@@ -4079,8 +4115,9 @@
         <div class="container">
             <div class="section-eyebrow">Service Areas</div>
             <h2 class="section-title">Pool Installation Across Texas</h2>
-            <p class="section-sub">We build in every major Texas city. Local knowledge, local crews, local permits -
-                handled.</p>
+            <h2 class="para-like section-sub">We build in every major Texas city. Local knowledge, local crews, local
+                permits -
+                handled.</h2>
 
             <div class="areas-grid">
                 <div class="area-card">
@@ -4138,7 +4175,8 @@
         <div class="container">
             <div class="section-eyebrow">Pool Knowledge Hub</div>
             <h2 class="section-title">Expert Guides &amp; Pool Tips</h2>
-            <p class="section-sub">Everything you need to know before, during, and after your pool is built.</p>
+            <h2 class="para-like section-sub">Everything you need to know before, during, and after your pool is built.
+            </h2>
 
             <div class="blog-grid">
                 <div class="blog-card">
@@ -4147,8 +4185,9 @@
                     <div class="blog-body">
                         <span class="blog-tag">Cost Guide</span>
                         <h3>How Much Does an Inground Pool Cost in Texas? (2024 Guide)</h3>
-                        <p>Real price ranges for fiberglass, concrete, and vinyl pools - including permits, equipment,
-                            and all add-ons.</p>
+                        <h2 class="para-like">Real price ranges for fiberglass, concrete, and vinyl pools - including
+                            permits, equipment,
+                            and all add-ons.</h2>
                         <div class="blog-meta">June 12, 2024 · 8 min read</div>
                     </div>
                 </div>
@@ -4159,8 +4198,9 @@
                     <div class="blog-body">
                         <span class="blog-tag">Pool Types</span>
                         <h3>Fiberglass vs. Concrete Pool: Which Is Right for Your Texas Backyard?</h3>
-                        <p>We break down lifetime costs, installation time, maintenance, and resale value - honestly.
-                        </p>
+                        <h2 class="para-like">We break down lifetime costs, installation time, maintenance, and resale
+                            value - honestly.
+                        </h2>
                         <div class="blog-meta">May 28, 2024 · 6 min read</div>
                     </div>
                 </div>
@@ -4171,8 +4211,9 @@
                     <div class="blog-body">
                         <span class="blog-tag">Maintenance</span>
                         <h3>New Pool Owner? Here's Your First-Year Maintenance Checklist</h3>
-                        <p>Weekly, monthly, and seasonal tasks to keep your new pool crystal-clear without spending a
-                            fortune.</p>
+                        <h2 class="para-like">Weekly, monthly, and seasonal tasks to keep your new pool crystal-clear
+                            without spending a
+                            fortune.</h2>
                         <div class="blog-meta">May 10, 2024 · 5 min read</div>
                     </div>
                 </div>
@@ -4192,8 +4233,9 @@
         <div class="container">
             <div class="section-eyebrow">Your Project Hub</div>
             <h2 class="section-title">Track Your Pool Build<br>in Real Time</h2>
-            <p class="section-sub">Current clients get a live dashboard - photos, timeline, documents, and direct
-                messaging with your project manager.</p>
+            <h2 class="para-like section-sub">Current clients get a live dashboard - photos, timeline, documents, and
+                direct
+                messaging with your project manager.</h2>
 
             <div class="portal-wrap">
                 <div class="portal-header">
@@ -4294,8 +4336,9 @@
         <div class="contact-left">
             <div class="section-eyebrow">Start Your Project</div>
             <h2>Get Your Free<br>Pool Quote Today</h2>
-            <p>No obligation. No pushy sales calls. Just a honest conversation about your backyard and your budget -
-                then a written quote within 48 hours.</p>
+            <h2 class="para-like">No obligation. No pushy sales calls. Just a honest conversation about your backyard
+                and your budget -
+                then a written quote within 48 hours.</h2>
             <div class="contact-info">
                 <div class="contact-info-item">
                     <div class="contact-info-icon">
@@ -4334,7 +4377,7 @@
 
         <div class="contact-right">
             <h3>Schedule a Free Consultation</h3>
-            <p class="form-sub">Takes 60 seconds. We'll reach out to book your in-home visit.</p>
+            <h2 class="para-like form-sub">Takes 60 seconds. We'll reach out to book your in-home visit.</h2>
             <div class="contact-form">
                 <div class="form-row">
                     <input type="text" class="form-input" placeholder="First name">
@@ -4373,8 +4416,9 @@
                         </div>
                         Fiberlux<span style="color:var(--accent)">Pools</span>
                     </div>
-                    <p>Texas's trusted custom pool builder since 1999. 500+ pools built. Licensed, insured, and built to
-                        last.</p>
+                    <h2 class="para-like">Texas's trusted custom pool builder since 1999. 500+ pools built. Licensed,
+                        insured, and built to
+                        last.</h2>
                     <div class="footer-socials">
                         <div class="social-btn">IG</div>
                         <div class="social-btn">FB</div>
